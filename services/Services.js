@@ -2,16 +2,22 @@ units = require('./Unit')
 
 class Services {
     compare(data) {
-        let result1, result2;
-        for (let i = 0; i < units.length.length; i++) {
-            if (data.unit == units.length[i].unitType) {
-                result1 = (units.length[i].value * data.value);
+        let result1, result2, measurementUnit;
+        console.log(data.unitType)
+        if (data.unitType == 'length') {
+            measurementUnit = units.length;
+        } else if (data.unitType == 'volume') {
+            measurementUnit = units.volume;
+        }
+        for (let i = 0; i < measurementUnit.length; i++) {
+            if (data.unit == measurementUnit[i].unitType) {
+                result1 = (measurementUnit[i].value * data.value);
             }
         }
 
-        for (let i = 0; i < units.length.length; i++) {
-            if (data.convertingUnit == units.length[i].unitType) {
-                result2 = (units.length[i].value * data.convertingValue);
+        for (let i = 0; i < measurementUnit.length; i++) {
+            if (data.convertingUnit == measurementUnit[i].unitType) {
+                result2 = (measurementUnit[i].value * data.convertingValue);
             }
         }
         return result1 == result2
