@@ -8,6 +8,8 @@ class Services {
             measurementUnit = units.length;
         } else if (data.unitType == 'volume') {
             measurementUnit = units.volume;
+        } else if (data.unitType == 'weight') {
+            measurementUnit = units.weight;
         }
         for (let i = 0; i < measurementUnit.length; i++) {
             if (data.unit == measurementUnit[i].unitType) {

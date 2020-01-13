@@ -17,7 +17,9 @@ class Controller {
         }
         if (data.unitType == 'length') {
             res.send(service.compare(data))
-        }else if (data.unitType == 'volume') {
+        } else if (data.unitType == 'volume') {
+            res.send(service.compare(data))
+        } else if (data.unitType == 'weight') {
             res.send(service.compare(data))
         }
     }
